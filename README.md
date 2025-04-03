@@ -1,2 +1,10 @@
 # portfolio-website
-A personal portfolio website showcasing my web development projects and skills, built with HTML, CSS, and JavaScript.
+
+This is my personal portfolio website where I showcase my web development projects and skills. It's a simple and responsive site built with HTML, CSS, and JavaScript.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- SASS
