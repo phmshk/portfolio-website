@@ -6,10 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Philipp Litzenberger | Frontend Developer</title>
   <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-
+  <header class="header">
+    <div class="header__logo">pl</div>
+    <nav class="header__nav">
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+      </ul>
+    </nav>
+    <button class="header__theme-toggle-btn">
+      <i class="fa-solid fa-moon header__theme-icon"></i>
+    </button>
+  </header>
+  <main class="main">
+    <section class="main__intro">
+      <p class="intro__name">Hi, my name is <span>Philipp Litzenberger.</span></p>
+      <h2 class="intro__title">I am learning Frontend Development.</h2>
+      <div class="intro__description">
+        <p>I'm focused on mastering my Frontend skills and finding a job.</p>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./index.js"></script>
 </body>
 
 </html>
