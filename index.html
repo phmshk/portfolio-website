@@ -9,30 +9,69 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body data-theme="light">
   <header class="header">
-    <div class="header__logo">pl</div>
-    <nav class="header__nav">
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-      </ul>
-    </nav>
-    <button class="header__theme-toggle-btn">
-      <i class="fa-solid fa-moon header__theme-icon"></i>
-    </button>
+    <div class="header__logo">&#60;pl&#47;&#62;</div>
+    <div class="header__right">
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+        </ul>
+      </nav>
+      <button class="header__theme-toggle-btn">
+        <i class="fa-solid fa-moon fa-1x header__theme-icon"></i>
+      </button>
+    </div>
   </header>
   <main class="main">
     <section class="main__intro">
-      <p class="intro__name">Hi, my name is <span>Philipp Litzenberger.</span></p>
-      <h2 class="intro__title">I am learning Frontend Development.</h2>
+      <p class="intro__name">Hi, my name is <span>Philipp</span></p>
+      <h1 class="intro__title">I'm learning Frontend Development.</h1>
       <div class="intro__description">
-        <p>I'm focused on mastering my Frontend skills and finding a job.</p>
+        <p>I'm focused on mastering my skills through various projects and finding a job.</p>
+      </div>
+      <div class="intro__contact">
+        <div class="intro__contact-item"></div>
+        <div class="intro__contact-item"></div>
       </div>
     </section>
+    <section class="main__about">
+      <h2 class="about__title">About Me</h2>
+      <div class="about__text">
+        <p>
+          I'm a self-taught Frontend Developer.
+          Currently, I'm focused on building responsive and accessible web interfaces using HTML, CSS, JavaScript and
+          React.
+        </p>
+        <p>I'm actively working on personal projects to improve my skills and grow as a
+          developer.
+        </p>
+        <p>My goal is to join a team where I can contribute, learn from others, and help build
+          great web experiences.
+        </p>
+      </div>
+    </section>
+    <section class="main__projects">
+      <h2 class="projects__title">My Projects</h2>
+      <article class="projects__project">
+        <img src="" alt="" class="project__image">
+        <h3 class="project__title"></h3>
+        <p class="project__description"></p>
+        <div class="project__tech-stack">
+          <div class="tech-stack__item"></div>
+          <div class="tech-stack__item"></div>
+          <div class="tech-stack__item"></div>
+        </div>
+      </article>
+    </section>
   </main>
+  <footer class="footer">
+    <p>&copy; 2025 Philipp Litzenberger</p>
+  </footer>
   <script type="module" src="./index.js"></script>
 </body>
 
