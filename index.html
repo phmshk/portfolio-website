@@ -1,78 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Philipp Litzenberger | Frontend Developer</title>
-  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+  <title>Philipp Litzenberger | FrontEnd Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="/js/index.js" defer></script>
 </head>
 
-<body data-theme="light">
+<body>
+  <section class="console-section">
+    <p class="ascii-row">...._...._......_.............................</p>
+    <p class="ascii-row">...|.|..|.|....|.|............................</p>
+    <p class="ascii-row">...|.|..|.|.___|.|.___.___.._.__.___...___....</p>
+    <p class="ascii-row">...|.|/\|.|/._.\.|/.__/._.\|.'_.`._.\./._.\...</p>
+    <p class="ascii-row">...\../\../..__/.|.(_|.(_).|.|.|.|.|.|..__/...</p>
+    <p class="ascii-row">....\/..\/.\___|_|\___\___/|_|.|_|.|_|\___|...</p>
+    <p class="ascii-row">..............................................</p>
+    <div class="console-rows preserve-whitespace"></div>
+  </section>
+
   <header class="header">
-    <div class="header__logo">&#60;pl&#47;&#62;</div>
-    <div class="header__right">
-      <nav class="header__nav">
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Projects</a></li>
-        </ul>
-      </nav>
-      <button class="header__theme-toggle-btn">
-        <i class="fa-solid fa-moon fa-1x header__theme-icon"></i>
-      </button>
+    <div class="container">
+      <div class="header__inner">
+        <a href="#" class="header__logo">&#60;PL&#47;&#62;</a>
+        <div class="header__wrapper">
+          <nav class="header__nav">
+            <ul>
+              <li><a href="#about">About Me</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="theme-toggle" id="themeToggle" aria-label="Toggle theme" role="button">
+            <div class="icon">
+              <div class="moon"></div>
+              <div class="sun"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </header>
-  <main class="main">
-    <section class="main__intro">
-      <p class="intro__name">Hi, my name is <span>Philipp</span></p>
-      <h1 class="intro__title">I'm learning Frontend Development.</h1>
-      <div class="intro__description">
-        <p>I'm focused on mastering my skills through various projects and finding a job.</p>
-      </div>
-      <div class="intro__contact">
-        <div class="intro__contact-item"></div>
-        <div class="intro__contact-item"></div>
-      </div>
-    </section>
-    <section class="main__about">
-      <h2 class="about__title">About Me</h2>
-      <div class="about__text">
-        <p>
-          I'm a self-taught Frontend Developer.
-          Currently, I'm focused on building responsive and accessible web interfaces using HTML, CSS, JavaScript and
-          React.
-        </p>
-        <p>I'm actively working on personal projects to improve my skills and grow as a
-          developer.
-        </p>
-        <p>My goal is to join a team where I can contribute, learn from others, and help build
-          great web experiences.
-        </p>
-      </div>
-    </section>
-    <section class="main__projects">
-      <h2 class="projects__title">My Projects</h2>
-      <article class="projects__project">
-        <img src="" alt="" class="project__image">
-        <h3 class="project__title"></h3>
-        <p class="project__description"></p>
-        <div class="project__tech-stack">
-          <div class="tech-stack__item"></div>
-          <div class="tech-stack__item"></div>
-          <div class="tech-stack__item"></div>
-        </div>
-      </article>
-    </section>
-  </main>
-  <footer class="footer">
-    <p>&copy;2025 Philipp Litzenberger</p>
-  </footer>
-  <script type="module" src="./index.js"></script>
 </body>
 
 </html>

@@ -7,4 +7,3 @@ This is my personal portfolio website where I showcase my web development projec
 - HTML
 - CSS
 - JavaScript
-- SASS
