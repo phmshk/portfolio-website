@@ -34,12 +34,13 @@
       <div class="header__inner">
         <a href="#" class="header__logo">&#60;PL&#47;&#62;</a>
         <div class="header__wrapper">
+          <div class="header__burger-menu"><span></span></div>
           <nav class="header__nav">
             <ul>
-              <li><a href="#about">About Me</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li class="nav__item"><a href="#about">About Me</a></li>
+              <li class="nav__item"><a href="#skills">Skills</a></li>
+              <li class="nav__item"><a href="#projects">Projects</a></li>
+              <li class="nav__item"><a href="#contact">Contact</a></li>
             </ul>
           </nav>
           <div class="theme-toggle dark" id="themeToggle" aria-label="Toggle theme" role="button">
@@ -54,25 +55,38 @@
   </header>
 
   <main class="main">
-    <div class="container">
-      <section class="about">
-        <img src="assets/suspiicious_fish.jpg" alt="Photo of site creator" class="about__img">
-        <div class="icon-bounce">
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-            aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
-            class="about__linkedin-link"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-        </div>
-        <div class="icon-bounce git-bounce">
-          <a href="https://github.com/phmshk" target="_blank" rel="noopener noreferrer"
-            aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)" class="about__github-link">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-          </a>
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about__img-icons">
+          <img src="assets/suspiicious_fish.jpg" alt="Photo of site creator" class="about__img">
+          <div class="icon-animated linkedin-animated">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+              aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
+              class="about__icon-link about__linkedin-link"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+          </div>
+          <div class="icon-animated git-animated">
+            <a href="https://github.com/phmshk" target="_blank" rel="noopener noreferrer"
+              aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
+              class="about__icon-link about__github-link">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
         <h2>Hi, I'm <span>Philipp</span></h2>
         <h1>Front-End Developer</h1>
-        <button>Contact me</button>
-        <button>Download CV</button>
-      </section>
+        <button class="about__contact-button"><a href="mailto:ph.litzenberger@gmail.com">Contact me</a></button>
+        <button class="about__download-button">Download CV</button>
+        <div class="about__icons-mobile">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+            aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
+            class=" about__icon-link about__linkedin-link"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://github.com/phmshk" target="_blank" rel="noopener noreferrer"
+            aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
+            class=" about__icon-link about__github-link">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+    </section>
     </div>
   </main>
 </body>

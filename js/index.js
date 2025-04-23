@@ -3,8 +3,12 @@ import { delay } from "./printMessages.js";
 
 const rows = document.querySelector(".console-rows");
 const consoleSection = document.querySelector(".console-section");
-const toggle = document.getElementById("themeToggle");
+const toggle = document.querySelector(".theme-toggle");
+const burgerMenu = document.querySelector(".header__burger-menu");
+const headerNav = document.querySelector(".header__nav");
 const html = document.documentElement;
+const body = document.body;
+const navItems = document.querySelectorAll(".nav__item");
 
 const messages = [
   " Hello, visitor.",
@@ -18,6 +22,31 @@ toggle.addEventListener("click", () => {
   html.setAttribute("data-theme", isDark ? "light" : "dark");
   toggle.classList.toggle("dark", !isDark);
 });
+
+burgerMenu.addEventListener("click", () => {
+  burgerMenu.classList.toggle("clicked");
+  headerNav.classList.toggle("active");
+  body.classList.toggle("no-scrolling");
+});
+
+navItems.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    const sectionId = e.target.hash.slice(1);
+    document.getElementById(sectionId).scrollIntoView({
+      behavior: "smooth",
+    });
+    if (window.innerWidth < 760) {
+      resetBurgerClassesForMobile();
+    }
+  });
+});
+
+function resetBurgerClassesForMobile() {
+  body.classList.remove("no-scrolling");
+  headerNav.classList.remove("active");
+  burgerMenu.classList.remove("clicked");
+}
 
 async function switchToPageView(ms) {
   await printMessages(messages, rows);
