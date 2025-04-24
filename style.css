@@ -653,6 +653,7 @@
     .icon-animated {
       display: none;
     }
+
     .about .about__icons-mobile {
       display: flex;
       justify-content: center;
@@ -663,6 +664,15 @@
       a:hover {
         transform: none;
       }
+    }
+  }
+
+  .about__introduction {
+    margin-block: 2rem;
+    text-align: left;
+
+    & > p:not(:last-child) {
+      margin-bottom: 1rem;
     }
   }
 }
@@ -686,5 +696,9 @@
 
   .no-scrolling {
     overflow: hidden;
+  }
+
+  .tag {
+    color: var(--clr-green);
   }
 }
