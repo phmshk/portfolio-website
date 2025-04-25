@@ -3,7 +3,7 @@ import { delay } from "./printMessages.js";
 
 const rows = document.querySelector(".console-rows");
 const consoleSection = document.querySelector(".console-section");
-const toggle = document.querySelector(".theme-toggle");
+const themeToggleBtn = document.querySelector(".theme-toggle-btn");
 const burgerMenu = document.querySelector(".header__burger-menu");
 const headerNav = document.querySelector(".header__nav");
 const html = document.documentElement;
@@ -18,10 +18,25 @@ const messages = [
   " Done. Enjoy your stay!",
 ];
 
-toggle.addEventListener("click", () => {
-  const isDark = html.getAttribute("data-theme") === "dark";
-  html.setAttribute("data-theme", isDark ? "light" : "dark");
-  toggle.classList.toggle("dark", !isDark);
+const animationPlayedOnce = localStorage.getItem("animationPlayed") || false;
+console.log(animationPlayedOnce);
+if (animationPlayedOnce) {
+  consoleSection.hidden = true;
+  document.querySelector("header").classList.remove("hidden");
+} else {
+  consoleSection.classList.remove("hidden");
+  startInitialAnimation();
+}
+
+const savedTheme = localStorage.getItem("theme") || "dark";
+applyTheme(savedTheme);
+
+themeToggleBtn.addEventListener("click", () => {
+  const currentTheme = html.dataset.theme;
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  applyTheme(newTheme);
+  themeToggleBtn.classList.toggle("dark", !(currentTheme === "dark"));
+  localStorage.setItem("theme", newTheme);
 });
 
 burgerMenu.addEventListener("click", () => {
@@ -71,6 +86,10 @@ function resetBurgerClassesForMobile() {
   burgerMenu.classList.remove("clicked");
 }
 
+function applyTheme(theme) {
+  html.dataset.theme = theme;
+}
+
 async function switchToPageView(ms) {
   await printMessages(messages, rows);
   await delay(ms);
@@ -81,8 +100,9 @@ async function startInitialAnimation() {
   document.body.style.overflow = "hidden";
   await switchToPageView(2000);
   document.body.style.overflow = "";
-  setTimeout(() => (consoleSection.style.display = "none"), 800);
+  setTimeout(() => {
+    consoleSection.style.display = "none";
+    document.querySelector("header").classList.remove("hidden");
+    localStorage.setItem("animationPlayed", true);
+  }, 800);
 }
-
-//startInitialAnimation();
-consoleSection.hidden = true;

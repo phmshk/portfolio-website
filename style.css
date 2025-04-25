@@ -193,8 +193,8 @@
   .to-top {
     display: none;
     position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
+    bottom: 3.5rem;
+    right: 1rem;
     z-index: 99;
     border: none;
     outline: none;
@@ -204,9 +204,11 @@
     padding: 15px;
     border-radius: 100%;
     font-size: 18px;
+    opacity: 0.5;
 
     &:hover {
       background-color: var(--clr-magenta);
+      opacity: 1;
     }
   }
 
@@ -221,7 +223,6 @@
     padding: 5px;
     font-size: var(--font-size-md);
     height: 100vh;
-    opacity: 1;
   }
 
   #console-window {
@@ -313,17 +314,6 @@
       text-decoration: none;
     }
 
-    .header__theme-toggle-btn {
-      border: none;
-      background: transparent;
-      cursor: pointer;
-    }
-
-    .header__theme-icon {
-      font-size: inherit;
-      color: var(--clr-bg-reverse);
-    }
-
     .header__logo {
       font-weight: 700;
       font-size: var(--font-size-heading-regular);
@@ -372,7 +362,7 @@
       }
     }
 
-    @media (width < 760px) {
+    @media (width < 875px) {
       .header__nav {
         position: absolute;
         top: 50px;
@@ -464,7 +454,7 @@
 
     /*THEME TOGGLE BUTTON*/
 
-    .theme-toggle {
+    .theme-toggle-btn {
       width: 2rem;
       height: 2rem;
       border-radius: 50%;
@@ -531,7 +521,7 @@
 
   /* SECTION ABOUT */
   .about {
-    margin: 90px auto 0 auto;
+    margin: 100px auto 0 auto;
     text-align: center;
 
     .about__icons-mobile {
@@ -860,9 +850,52 @@
       }
     }
   }
+
+  /*LANGUAGES SECTION*/
+  .languages__heading {
+    h2 {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: var(--font-size-md);
+    }
+  }
+
+  .languages__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 28px;
+    grid-template-rows: repeat(2, auto);
+    margin-top: 1rem;
+    justify-items: center;
+
+    dt {
+      grid-row: 1/2;
+      font-weight: 600;
+      font-size: var(--font-size-heading-sm);
+    }
+
+    dd {
+      grid-row: 2/2;
+    }
+  }
+
+  /*FOOOTER*/
+  .footer {
+    margin-block: 5rem 2rem;
+    .footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 
 @layer shared {
+  .hidden {
+    display: none;
+  }
   section {
     padding-block: 2rem;
     scroll-margin-top: 5rem;

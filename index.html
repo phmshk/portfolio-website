@@ -18,18 +18,20 @@
 </head>
 
 <body>
-  <section class="console-section">
-    <p class="ascii-row">...._...._......_.............................</p>
-    <p class="ascii-row">...|.|..|.|....|.|............................</p>
-    <p class="ascii-row">...|.|..|.|.___|.|.___.___.._.__.___...___....</p>
-    <p class="ascii-row">...|.|/\|.|/._.\.|/.__/._.\|.'_.`._.\./._.\...</p>
-    <p class="ascii-row">...\../\../..__/.|.(_|.(_).|.|.|.|.|.|..__/...</p>
-    <p class="ascii-row">....\/..\/.\___|_|\___\___/|_|.|_|.|_|\___|...</p>
-    <p class="ascii-row">..............................................</p>
+  <section class="console-section hidden">
+    <pre class="ascii-row">
+      &#60;!-- .-----------------------------------------. --&#62;
+      &#60;!-- | __    __     _                          | --&#62;
+      &#60;!-- |/ / /\ \ \___| | ___ ___  _ __ ___   ___ | --&#62;
+      &#60;!-- |\ \/  \/ / _ \ |/ __/ _ \| '_ ` _ \ / _ \| --&#62;
+      &#60;!-- | \  /\  /  __/ | (_| (_) | | | | | |  __/| --&#62;
+      &#60;!-- |  \/  \/ \___|_|\___\___/|_| |_| |_|\___|| --&#62;
+      &#60;!-- '-----------------------------------------' --&#62;
+    </pre>
     <div class="console-rows preserve-whitespace"></div>
   </section>
 
-  <header class="header">
+  <header class="header hidden">
     <div class="container">
       <div class="header__inner">
         <a href="#" class="header__logo">&#60;PL&#47;&#62;</a>
@@ -40,10 +42,10 @@
               <li class="nav__item"><a href="#about">About Me</a></li>
               <li class="nav__item"><a href="#skills">Skills</a></li>
               <li class="nav__item"><a href="#projects">Projects</a></li>
-              <li class="nav__item"><a href="#contact">Contact</a></li>
+              <li class="nav__item"><a href="#languages">Languages</a></li>
             </ul>
           </nav>
-          <div class="theme-toggle dark" id="themeToggle" aria-label="Toggle theme" role="button">
+          <div class="theme-toggle-btn dark" aria-label="Toggle theme" role="button">
             <div class="icon">
               <div class="moon"></div>
               <div class="sun"></div>
@@ -172,15 +174,49 @@
               <a class="button content__button pointer" target="_blank" rel="noopener noreferrer">
                 See Project
               </a>
-
             </div>
           </article>
         </div>
       </div>
     </section>
 
-
+    <section class="languages" id="languages">
+      <div class="container">
+        <div class="languages__heading">
+          <h2>Languages</h2>
+          <p>I speak</p>
+        </div>
+        <dl class="languages__list">
+          <dt>German</dt>
+          <dd>Fluent (C1)</dd>
+          <dt>English</dt>
+          <dd>Fluent (B2)</dd>
+          <dt>Russian</dt>
+          <dd>Navite</dd>
+        </dl>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__copyright">
+          <p>&copy; 2025 by Philipp Litzenberger</p>
+        </div>
+        <div class="footer__links">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+            aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
+            class="about__icon-link about__linkedin-link">LinkedIn</a>
+          <a href="https://github.com/phmshk" target="_blank" rel="noopener noreferrer"
+            aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
+            class="about__icon-link about__github-link">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
