@@ -9,6 +9,7 @@ const headerNav = document.querySelector(".header__nav");
 const html = document.documentElement;
 const body = document.body;
 const navItems = document.querySelectorAll(".nav__item");
+const toTopBtn = document.querySelector(".to-top");
 
 const messages = [
   " Hello, visitor.",
@@ -41,6 +42,28 @@ navItems.forEach((item) => {
     }
   });
 });
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+toTopBtn.addEventListener("click", topFunction);
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 150 ||
+    document.documentElement.scrollTop > 150
+  ) {
+    toTopBtn.style.display = "block";
+  } else {
+    toTopBtn.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
 function resetBurgerClassesForMobile() {
   body.classList.remove("no-scrolling");
