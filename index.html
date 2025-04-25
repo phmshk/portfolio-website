@@ -59,7 +59,7 @@
     <section class="about" id="about">
       <div class="container">
         <div class="about__img-icons">
-          <img src="assets/suspiicious_fish.jpg" alt="Photo of site creator" class="about__img">
+          <img src="assets/suspicious_fish.jpg" alt="Photo of site creator" class="about__img">
           <div class="icon-animated linkedin-animated">
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
               aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
@@ -75,9 +75,11 @@
         </div>
         <h2>Hi, I'm <span>Philipp</span></h2>
         <h1>Front-End Developer</h1>
-        <button class="about__contact-button pointer"><a href="mailto:ph.litzenberger@gmail.com">Contact
-            me</a></button>
-        <button class="about__download-button pointer">Download CV</button>
+        <div class="about__contact-and-cv">
+          <a href="mailto:ph.litzenberger@gmail.com" class="button about__contact-button pointer">Contact
+            me</a>
+          <button class="button about__download-button pointer">Download CV</button>
+        </div>
         <div class="about__icons-mobile">
           <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
             aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
@@ -148,31 +150,36 @@
       <div class="container">
         <div class="projects__inner">
           <h2>Recent Projects</h2>
-          <a class="projects__item">
-            <img src="#" alt="Screenshot of a project.">
+          <article class="projects__item projects__item--1">
+            <img src="assets/coming-soon.png" alt="Screenshot of project.">
             <div class="item__content">
-              <p>*Technologies used*</p>
-              <h3>Coming soon.</h3>
+              <p class="content__technologies-text">*Technologies used*</p>
+              <h3>Coming soon...</h3>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi asperiores molestias qui magnam laborum
-                saepe perspiciatis deserunt, a in? Accusantium quidem doloribus quod? Reprehenderit, non? Repellendus
-                officia libero debitis quis!</p>
-              <button class="content__button pointer">See Project</button>
+                saepe perspiciatis deserunt, a in?</p>
+              <a class="button content__button pointer" target="_blank" rel="noopener noreferrer">
+                See Project
+              </a>
             </div>
-          </a>
-          <a class="projects__item">
-            <img src="#" alt="Screenshot of a project.">
+          </article>
+          <article class="projects__item projects__item--2">
+            <img src="assets/coming-soon.png" alt="Screenshot of project.">
             <div class="item__content">
-              <p>*Technologies used*</p>
-              <h3>Coming soon.</h3>
+              <p class="content__technologies-text">*Technologies used*</p>
+              <h3>Coming soon...</h3>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi asperiores molestias qui magnam laborum
-                saepe perspiciatis deserunt, a in? Accusantium quidem doloribus quod? Reprehenderit, non? Repellendus
-                officia libero debitis quis!</p>
-              <button class="content__button pointer">See Project</button>
+                saepe perspiciatis deserunt, a in?</p>
+              <a class="button content__button pointer" target="_blank" rel="noopener noreferrer">
+                See Project
+              </a>
+
             </div>
-          </a>
+          </article>
         </div>
       </div>
     </section>
+
+
   </main>
 </body>
 
