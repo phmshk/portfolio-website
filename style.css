@@ -446,7 +446,7 @@
       }
     }
 
-    @media (width < 760px) {
+    @media (width < 875px) {
       .header__burger-menu {
         display: block;
       }
