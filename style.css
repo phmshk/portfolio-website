@@ -878,6 +878,7 @@
 
     dd {
       grid-row: 2/2;
+      text-align: center;
     }
   }
 
