@@ -1,9 +1,5 @@
-import printMessages from "./printMessages.js";
-import { delay } from "./printMessages.js";
-
-const rows = document.querySelector(".console-rows");
-const consoleSection = document.querySelector(".console-section");
 const themeToggleBtn = document.querySelector(".theme-toggle-btn");
+const themeIcon = themeToggleBtn.querySelector("i");
 const burgerMenu = document.querySelector(".header__burger-menu");
 const headerNav = document.querySelector(".header__nav");
 const html = document.documentElement;
@@ -11,31 +7,25 @@ const body = document.body;
 const navItems = document.querySelectorAll(".nav__item");
 const toTopBtn = document.querySelector(".to-top");
 
-const messages = [
-  " Hello, visitor.",
-  " Initializing portfolio...",
-  " Loading projects...",
-  " Done. Enjoy your stay!",
-];
-
-const animationPlayedOnce = localStorage.getItem("animationPlayed") || false;
-console.log(animationPlayedOnce);
-if (animationPlayedOnce) {
-  consoleSection.hidden = true;
-  document.querySelector("header").classList.remove("hidden");
-} else {
-  consoleSection.classList.remove("hidden");
-  startInitialAnimation();
-}
-
+// Theme applying on site loading
 const savedTheme = localStorage.getItem("theme") || "dark";
 applyTheme(savedTheme);
 
+// Theme toggling
 themeToggleBtn.addEventListener("click", () => {
   const currentTheme = html.dataset.theme;
   const newTheme = currentTheme === "light" ? "dark" : "light";
+
   applyTheme(newTheme);
-  themeToggleBtn.classList.toggle("dark", !(currentTheme === "dark"));
+
+  if (currentTheme === "light") {
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  } else {
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+  }
+
   localStorage.setItem("theme", newTheme);
 });
 
@@ -52,7 +42,7 @@ navItems.forEach((item) => {
     document.getElementById(sectionId).scrollIntoView({
       behavior: "smooth",
     });
-    if (window.innerWidth < 760) {
+    if (window.innerWidth < 870) {
       resetBurgerClassesForMobile();
     }
   });
@@ -63,6 +53,36 @@ window.onscroll = function () {
 };
 
 toTopBtn.addEventListener("click", topFunction);
+
+// Animate elements on loading
+
+const observerOptions = {
+  threshold: 0.1,
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, observerOptions);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const animatedElements = document.querySelectorAll(
+    ".skills-list .about__introduction"
+  );
+  animatedElements.forEach((el, index) => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+    setTimeout(() => {
+      observer.observe(el);
+    }, 100 * index);
+  });
+});
 
 function scrollFunction() {
   if (
@@ -94,15 +114,4 @@ async function switchToPageView(ms) {
   await printMessages(messages, rows);
   await delay(ms);
   consoleSection.classList.add("fade-away");
-}
-
-async function startInitialAnimation() {
-  document.body.style.overflow = "hidden";
-  await switchToPageView(2000);
-  document.body.style.overflow = "";
-  setTimeout(() => {
-    consoleSection.style.display = "none";
-    document.querySelector("header").classList.remove("hidden");
-    localStorage.setItem("animationPlayed", true);
-  }, 800);
 }

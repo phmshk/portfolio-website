@@ -128,6 +128,8 @@
     --clr-surface-reverse: #073642;
     --clr-border-reverse: #586e75;
     --clr-text-reverse: #eee8d5;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
   }
 
   [data-theme="dark"] {
@@ -139,6 +141,8 @@
     --clr-surface-reverse: #eee8d5;
     --clr-border-reverse: #93a1a1;
     --clr-text-reverse: #657b83;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.4);
   }
 
   html {
@@ -162,6 +166,7 @@
   li {
     transition: background-color 0.8s ease, color 0.8s ease;
   }
+
   h1,
   h2,
   h3,
@@ -170,7 +175,7 @@
   }
 
   h1 {
-    font-size: var(--font-size-heading-lg);
+    font-size: var(--font-size-heading-regular);
   }
 
   h2 {
@@ -218,75 +223,6 @@
     }
   }
 
-  /* STARTING CONSOLE */
-  .console-section {
-    padding: 5px;
-    font-size: var(--font-size-md);
-    height: 100vh;
-  }
-
-  #console-window {
-    border: none;
-  }
-
-  .console-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .cursor {
-    top: 0;
-    right: 0;
-    display: none;
-    width: 1rem;
-    height: 1.75rem;
-    background-color: var(--clr-border);
-
-    &.blink {
-      animation: blink steps(1, end) 1s infinite;
-    }
-  }
-
-  @keyframes blink {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 1;
-    }
-
-    100% {
-      opacity: 0;
-    }
-  }
-
-  @media (width < 800px) {
-    .ascii-row {
-      font-size: var(--font-size-sm);
-    }
-    .console-rows {
-      font-size: var(--font-size-regular);
-    }
-  }
-
-  @media (width < 450px) {
-    .ascii-row {
-      display: none;
-    }
-
-    .console-rows {
-      font-size: var(--font-size-sm);
-    }
-
-    .text-span {
-      word-break: break-all;
-      overflow-wrap: break-word;
-    }
-  }
-
   /* HEADER */
   .header {
     padding: 1rem;
@@ -296,6 +232,7 @@
     right: 0;
     background-color: var(--clr-bg);
     z-index: 100;
+    box-shadow: var(--shadow);
   }
 
   .header__inner {
@@ -303,7 +240,7 @@
     justify-content: space-between;
     align-items: center;
 
-    .header__wrapper {
+    .header__inner-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -317,6 +254,7 @@
     .header__logo {
       font-weight: 700;
       font-size: var(--font-size-heading-regular);
+      color: var(--clr-orange);
     }
 
     /* NAVIGATION MENU*/
@@ -365,7 +303,7 @@
     @media (width < 875px) {
       .header__nav {
         position: absolute;
-        top: 50px;
+        top: var(--font-size-heading-lg);
         left: 0;
         right: 0;
         height: 100vh;
@@ -455,67 +393,14 @@
     /*THEME TOGGLE BUTTON*/
 
     .theme-toggle-btn {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background: transparent;
-      position: relative;
+      color: var(--clr-bg-reverse);
+      font-size: var(--font-size-heading-sm);
       cursor: pointer;
-      transition: transform 0.4s ease;
+      transition: transform 0.3s;
+    }
 
-      .icon {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
-
-      .moon {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 100%;
-        background-color: var(--clr-yellow);
-        transition: all 1s;
-        opacity: 1;
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 1.55rem;
-          height: 1.55rem;
-          background-color: var(--clr-bg);
-          border-radius: 100%;
-          transition: all 1s;
-        }
-
-        &::before {
-          content: "";
-          position: absolute;
-          top: -0.5rem;
-          bottom: -0.5rem;
-          left: -0.5rem;
-          right: -0.5rem;
-          border-radius: 100%;
-          border: 0.3rem dotted var(--clr-yellow);
-          opacity: 0;
-          transition: all 1s;
-        }
-      }
-
-      &.dark .moon {
-        transform: rotate(180deg) scale(0.8);
-
-        &::after {
-          width: 2rem;
-          height: 2rem;
-          background-color: var(--clr-yellow);
-        }
-
-        &::before {
-          opacity: 1;
-        }
-      }
+    .theme-toggle-btn:hover {
+      transform: scale(1.1);
     }
   }
 
