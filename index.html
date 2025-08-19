@@ -1,227 +1,303 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      property="og:title"
+      content="Philipp Litzenberger - Front-End Developer"
+    />
+    <meta
+      property="og:description"
+      content="Personal Website of Philipp Litzenberger"
+    />
+    <title>Philipp Litzenberger | FrontEnd Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Philipp Litzenberger - Front-End Developer">
-  <meta property="og:description" content="Personal Website of Philipp Litzenberger">
-  <title>Philipp Litzenberger | FrontEnd Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="/js/index.js" defer></script>
-</head>
-
-<body>
-  <section class="console-section hidden">
-    <pre class="ascii-row">
-      &#60;!-- .-----------------------------------------. --&#62;
-      &#60;!-- | __    __     _                          | --&#62;
-      &#60;!-- |/ / /\ \ \___| | ___ ___  _ __ ___   ___ | --&#62;
-      &#60;!-- |\ \/  \/ / _ \ |/ __/ _ \| '_ ` _ \ / _ \| --&#62;
-      &#60;!-- | \  /\  /  __/ | (_| (_) | | | | | |  __/| --&#62;
-      &#60;!-- |  \/  \/ \___|_|\___\___/|_| |_| |_|\___|| --&#62;
-      &#60;!-- '-----------------------------------------' --&#62;
-    </pre>
-    <div class="console-rows preserve-whitespace"></div>
-  </section>
-
-  <header class="header hidden">
-    <div class="container">
-      <div class="header__inner">
-        <a href="#" class="header__logo">&#60;PL&#47;&#62;</a>
-        <div class="header__wrapper">
-          <div class="header__burger-menu"><span></span></div>
-          <nav class="header__nav">
-            <ul>
-              <li class="nav__item"><a href="#about">About Me</a></li>
-              <li class="nav__item"><a href="#skills">Skills</a></li>
-              <li class="nav__item"><a href="#projects">Projects</a></li>
-              <li class="nav__item"><a href="#languages">Languages</a></li>
-            </ul>
-          </nav>
-          <div class="theme-toggle-btn dark" aria-label="Toggle theme" role="button">
-            <div class="icon">
-              <div class="moon"></div>
-              <div class="sun"></div>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="#" class="header__logo">&#60;PL&#47;&#62;</a>
+          <div class="header__inner-wrapper">
+            <nav class="header__nav">
+              <ul>
+                <li class="nav__item"><a href="#about">About Me</a></li>
+                <li class="nav__item"><a href="#skills">Skills</a></li>
+                <li class="nav__item"><a href="#projects">Projects</a></li>
+                <li class="nav__item"><a href="#languages">Languages</a></li>
+              </ul>
+            </nav>
+            <div
+              class="header__burger-menu"
+              aria-label="Open/close burger menu"
+              role="button"
+            >
+              <span></span>
+            </div>
+            <div
+              class="theme-toggle-btn"
+              aria-label="Toggle theme"
+              role="button"
+            >
+              <i class="fas fa-moon"></i>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="main">
-    <button class="to-top" title="Go to top">Top</button>
-    <section class="about" id="about">
-      <div class="container">
-        <div class="about__img-icons">
-          <img src="assets/suspicious_fish.jpg" alt="Photo of site creator" class="about__img">
-          <div class="icon-animated linkedin-animated">
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-              aria-label="Open LinkedIn profile in a new tab" title="LinkedIn (opens in new tab)"
-              class="about__icon-link about__linkedin-link"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+    <main class="main">
+      <button class="to-top" title="Go to top">Top</button>
+      <section class="about" id="about">
+        <div class="container">
+          <div class="about__img-icons">
+            <img
+              src="https://placehold.co/300x300/2aa198/ffffff?text=Philipp"
+              alt="Photo of site creator"
+            />
+            <div class="icon-animated linkedin-animated">
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open LinkedIn profile in a new tab"
+                title="LinkedIn (opens in new tab)"
+                class="about__icon-link about__linkedin-link"
+                ><i class="fa-brands fa-linkedin" aria-hidden="true"></i
+              ></a>
+            </div>
+            <div class="icon-animated git-animated">
+              <a
+                href="https://github.com/phmshk"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open GitHub profile in a new tab"
+                title="GitHub (opens in new tab)"
+                class="about__icon-link about__github-link"
+              >
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
-          <div class="icon-animated git-animated">
-            <a href="https://github.com/phmshk" target="_blank" rel="noopener noreferrer"
-              aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
-              class="about__icon-link about__github-link">
+          <h2>Hi, I'm <span>Philipp</span></h2>
+          <h1>Front-End Developer</h1>
+          <div class="about__contact-and-cv">
+            <a
+              href="mailto:ph.litzenberger@gmail.com"
+              class="button about__contact-button pointer"
+              >Contact me</a
+            >
+            <a
+              href="assets/Litzenberger_Philipp_CV.pdf"
+              download="CV-Philipp.pdf"
+              class="button about__download-button pointer"
+              >Download CV</a
+            >
+          </div>
+          <div class="about__icons-mobile">
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open GitHub profile in a new tab"
+              title="GitHub (opens in new tab)"
+              class="about__icon-link about__linkedin-link"
+              ><i class="fa-brands fa-linkedin" aria-hidden="true"></i
+            ></a>
+            <a
+              href="https://github.com/phmshk"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open GitHub profile in a new tab"
+              title="GitHub (opens in new tab)"
+              class="about__icon-link about__github-link"
+            >
               <i class="fa-brands fa-github" aria-hidden="true"></i>
             </a>
           </div>
+          <div class="about__introduction">
+            <p>
+              <span class="tag">&#60;</span>I am a self-taught front-end
+              developer based in Frankfurt am Main.<span class="tag"
+                >&#47;&#62;</span
+              >
+            </p>
+            <p>
+              <span class="tag">&#60;</span>So far, I have gained experience in
+              HTML, CSS, JavaScript, TypeScript, and React.<span class="tag"
+                >&#47;&#62;</span
+              >
+            </p>
+            <p>
+              <span class="tag">&#60;</span>Currently, I'm looking for
+              opportunities to join a team where I can contribute, grow
+              professionally, and take on new challenges.<span class="tag"
+                >&#47;&#62;</span
+              >
+            </p>
+          </div>
         </div>
-        <h2>Hi, I'm <span>Philipp</span></h2>
-        <h1>Front-End Developer</h1>
-        <div class="about__contact-and-cv">
-          <a href="mailto:ph.litzenberger@gmail.com" class="button about__contact-button pointer">Contact
-            me</a>
-          <a href="assets/Litzenberger_Philipp_CV.pdf" download="CV-Philipp.pdf"
-            class="button about__download-button pointer">Download
-            CV</a>
-        </div>
-        <div class="about__icons-mobile">
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-            aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
-            class=" about__icon-link about__linkedin-link"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-          <a href="https://github.com/phmshk" target="_blank" rel="noopener noreferrer"
-            aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
-            class=" about__icon-link about__github-link">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div class="about__introduction">
-          <p><span class="tag">&#60;</span>I am a self-taught front-end developer based in Frankfurt am Main.<span
-              class="tag">&#47;&#62;</span></p>
-          <p><span class="tag">&#60;</span>So far, I have gained experience in HTML, CSS, JavaScript, TypeScript, and
-            React.<span class="tag">&#47;&#62;</span></p>
-          <p><span class="tag">&#60;</span>Currently, I'm looking for opportunities to join a team where I can
-            contribute, grow professionally, and take on new challenges.<span class="tag">&#47;&#62;</span></p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="skills" id="skills">
-      <div class="container" data-width="large">
-        <div class="skills__inner">
-          <h2>Tech Stack</h2>
-          <div class="skills__tech-stack">
-            <div class="skills-category">
-              <h3>Core Technologies</h3>
-              <ul class="skills-list">
-                <li><i class="fab fa-html5"></i> HTML5</li>
-                <li><i class="fab fa-css"></i> CSS3 / Sass</li>
-                <li><i class="fab fa-js"></i> JavaScript (ES6+)</li>
-                <li><i class="fas fa-code"></i> TypeScript</li>
-              </ul>
-            </div>
-            <div class="skills-category">
-              <h3>Libraries & Frameworks</h3>
-              <ul class="skills-list">
-                <li><i class="fab fa-react"></i> React</li>
-                <li><i class="fas fa-route"></i> React Router</li>
-                <li><i class="fas fa-diagram-project"></i> React Context</li>
-              </ul>
-            </div>
-            <div class="skills-category">
-              <h3>Tools & Workflow</h3>
-              <ul class="skills-list">
-                <li><i class="fab fa-git-alt"></i> Git / GitHub</li>
-                <li><i class="fas fa-code"></i> VS Code</li>
-                <li><i class="fab fa-npm"></i> npm </li>
-                <li><i class="fas fa-bolt"></i> Vite</li>
-              </ul>
-            </div>
-            <div class="skills-category">
-              <h3>Currently Learning</h3>
-              <ul class="skills-list">
-                <li><i class="fas fa-layer-group"></i> Advanced TypeScript</li>
-                <li><i class="fas fa-diagram-project"></i> Redux</li>
-                <li><i class="fas fa-vial"></i> Testing libraries</li>
-                <li><i class="fas fa-universal-access"></i> Accessibility (a11y)</li>
-              </ul>
+      <section class="skills" id="skills">
+        <div class="container" data-width="large">
+          <div class="skills__inner">
+            <h2>Tech Stack</h2>
+            <div class="skills__tech-stack">
+              <div class="skills-category">
+                <h3>Core Technologies</h3>
+                <ul class="skills-list">
+                  <li><i class="fab fa-html5"></i> HTML5</li>
+                  <li><i class="fab fa-css"></i> CSS3 / Sass</li>
+                  <li><i class="fab fa-js"></i> JavaScript (ES6+)</li>
+                  <li><i class="fas fa-code"></i> TypeScript</li>
+                </ul>
+              </div>
+              <div class="skills-category">
+                <h3>Libraries & Frameworks</h3>
+                <ul class="skills-list">
+                  <li><i class="fab fa-react"></i> React</li>
+                  <li><i class="fas fa-route"></i> React Router</li>
+                  <li><i class="fas fa-diagram-project"></i> React Context</li>
+                </ul>
+              </div>
+              <div class="skills-category">
+                <h3>Tools & Workflow</h3>
+                <ul class="skills-list">
+                  <li><i class="fab fa-git-alt"></i> Git / GitHub</li>
+                  <li><i class="fas fa-code"></i> VS Code</li>
+                  <li><i class="fab fa-npm"></i> npm</li>
+                  <li><i class="fas fa-bolt"></i> Vite</li>
+                </ul>
+              </div>
+              <div class="skills-category">
+                <h3>Currently Learning</h3>
+                <ul class="skills-list">
+                  <li>
+                    <i class="fas fa-layer-group"></i> Advanced TypeScript
+                  </li>
+                  <li><i class="fas fa-diagram-project"></i> Redux</li>
+                  <li><i class="fas fa-vial"></i> Testing libraries</li>
+                  <li>
+                    <i class="fas fa-universal-access"></i> Accessibility (a11y)
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="projects" id="projects">
+      <section class="projects" id="projects">
+        <div class="container">
+          <div class="projects__inner">
+            <h2>Recent Projects</h2>
+            <article class="projects__item projects__item--1">
+              <img src="assets/coming-soon.png" alt="Screenshot of project." />
+              <div class="item__content">
+                <p class="content__technologies-text">*Technologies used*</p>
+                <h3>Coming soon...</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Sequi asperiores molestias qui magnam laborum saepe
+                  perspiciatis deserunt, a in?
+                </p>
+                <a
+                  class="button content__button pointer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  See Project
+                </a>
+              </div>
+            </article>
+            <article class="projects__item projects__item--2">
+              <img src="assets/coming-soon.png" alt="Screenshot of project." />
+              <div class="item__content">
+                <p class="content__technologies-text">*Technologies used*</p>
+                <h3>Coming soon...</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Sequi asperiores molestias qui magnam laborum saepe
+                  perspiciatis deserunt, a in?
+                </p>
+                <a
+                  class="button content__button pointer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  See Project
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="languages" id="languages">
+        <div class="container">
+          <div class="languages__heading">
+            <h2>Languages</h2>
+            <p>I speak</p>
+          </div>
+          <dl class="languages__list">
+            <dt>German</dt>
+            <dd>Fluent (C1)</dd>
+            <dt>English</dt>
+            <dd>Fluent (B2)</dd>
+            <dt>Russian</dt>
+            <dd>Navite</dd>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
       <div class="container">
-        <div class="projects__inner">
-          <h2>Recent Projects</h2>
-          <article class="projects__item projects__item--1">
-            <img src="assets/coming-soon.png" alt="Screenshot of project.">
-            <div class="item__content">
-              <p class="content__technologies-text">*Technologies used*</p>
-              <h3>Coming soon...</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi asperiores molestias qui magnam laborum
-                saepe perspiciatis deserunt, a in?</p>
-              <a class="button content__button pointer" target="_blank" rel="noopener noreferrer">
-                See Project
-              </a>
-            </div>
-          </article>
-          <article class="projects__item projects__item--2">
-            <img src="assets/coming-soon.png" alt="Screenshot of project.">
-            <div class="item__content">
-              <p class="content__technologies-text">*Technologies used*</p>
-              <h3>Coming soon...</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi asperiores molestias qui magnam laborum
-                saepe perspiciatis deserunt, a in?</p>
-              <a class="button content__button pointer" target="_blank" rel="noopener noreferrer">
-                See Project
-              </a>
-            </div>
-          </article>
+        <div class="footer__inner">
+          <div class="footer__copyright">
+            <p>&copy; 2025 by Philipp Litzenberger</p>
+          </div>
+          <div class="footer__links">
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open GitHub profile in a new tab"
+              title="GitHub (opens in new tab)"
+              class="about__icon-link about__linkedin-link"
+              >LinkedIn</a
+            >
+            <a
+              href="https://github.com/phmshk"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open GitHub profile in a new tab"
+              title="GitHub (opens in new tab)"
+              class="about__icon-link about__github-link"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
-    </section>
-
-    <section class="languages" id="languages">
-      <div class="container">
-        <div class="languages__heading">
-          <h2>Languages</h2>
-          <p>I speak</p>
-        </div>
-        <dl class="languages__list">
-          <dt>German</dt>
-          <dd>Fluent (C1)</dd>
-          <dt>English</dt>
-          <dd>Fluent (B2)</dd>
-          <dt>Russian</dt>
-          <dd>Navite</dd>
-        </dl>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__copyright">
-          <p>&copy; 2025 by Philipp Litzenberger</p>
-        </div>
-        <div class="footer__links">
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-            aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
-            class="about__icon-link about__linkedin-link">LinkedIn</a>
-          <a href="https://github.com/phmshk" target="_blank" rel="noopener noreferrer"
-            aria-label="Open GitHub profile in a new tab" title="GitHub (opens in new tab)"
-            class="about__icon-link about__github-link">
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>
