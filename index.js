@@ -18,13 +18,6 @@ themeToggleBtn.addEventListener("click", () => {
 
   applyTheme(newTheme);
 
-  if (currentTheme === "light") {
-    themeIcon.classList.remove("fa-moon");
-    themeIcon.classList.add("fa-sun");
-  } else {
-    themeIcon.classList.remove("fa-sun");
-    themeIcon.classList.add("fa-moon");
-  }
 
   localStorage.setItem("theme", newTheme);
 });
@@ -71,7 +64,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const animatedElements = document.querySelectorAll(
-    ".skills-list .about__introduction"
+    ".skills-list "
   );
   animatedElements.forEach((el, index) => {
     el.style.opacity = 0;
@@ -107,6 +100,13 @@ function resetBurgerClassesForMobile() {
 }
 
 function applyTheme(theme) {
+  if (theme === "light") {
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  } else {
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+  }
   html.dataset.theme = theme;
 }
 

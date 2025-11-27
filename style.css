@@ -85,7 +85,6 @@
     --clr-cyan-alpha: #2aa19839;
     --clr-green: #859900;
     --clr-green-alpha: #85990039;
-    --clr-white-alpha: #ffffff39;
 
     --ff: "IBM Plex Mono", monospace;
     --fs-300: 0.875rem;
@@ -130,6 +129,7 @@
     --clr-text-reverse: #eee8d5;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+    --clr-bg-alpha: #fdf6e3a3;
   }
 
   [data-theme="dark"] {
@@ -143,6 +143,7 @@
     --clr-text-reverse: #657b83;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.4);
+    --clr-bg-alpha: #002b36a3;
   }
 
   html {
@@ -194,6 +195,23 @@
 }
 
 @layer components {
+  /* SECTION DIVIDER */
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      var(--clr-border),
+      transparent
+    );
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.4;
+  }
+
   /*TO TOP BUTTON*/
   .to-top {
     display: none;
@@ -424,6 +442,7 @@
 
       img {
         position: absolute;
+        object-fit: cover;
         top: 50%;
         left: 50%;
         width: 200px;
@@ -648,11 +667,14 @@
       }
 
       .item__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
         text-align: right;
         max-width: 70%;
         padding: 2rem;
         border-radius: 10px;
-        background-color: var(--clr-white-alpha);
+        background-color: var(--clr-bg-alpha);
 
         & > * + * {
           margin-top: 1rem;
@@ -673,6 +695,10 @@
 
         .item__content {
           text-align: left;
+          align-items: flex-start;
+          a {
+            align-self: flex-start;
+          }
         }
       }
     }
@@ -683,23 +709,33 @@
       position: relative;
       z-index: 0;
 
+      .item__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        a {
+          align-self: flex-end;
+        }
+      }
+
       &::before {
         content: "";
         position: absolute;
         inset: 0;
         background-size: cover;
         background-position: center;
-        opacity: 0.1;
+        opacity: 0.3;
         z-index: -1;
         border-radius: 10px;
       }
 
       &.projects__item--1::before {
-        background-image: url("assets/coming-soon.png");
+        background-image: url("assets/main_screen_fittrack.webp");
       }
 
       &.projects__item--2::before {
-        background-image: url("assets/coming-soon.png");
+        background-image: url("assets/main_screen_portfolio.webp");
       }
     }
   }
@@ -722,8 +758,8 @@
           display: block;
           width: 100%;
           height: 240px;
-          object-fit: cover;
-          border-radius: 10px;
+          object-fit: contain;
+          border-radius: 20px;
         }
 
         .item__content {
