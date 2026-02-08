@@ -738,12 +738,16 @@
       }
 
       &.projects__item--1::before {
+        background-image: url("assets/main_screen_panel_studio.webp");
+      }
+      &.projects__item--2::before {
         background-image: url("assets/main_screen_fittrack.webp");
       }
 
-      &.projects__item--2::before {
+      &.projects__item--3::before {
         background-image: url("assets/main_screen_portfolio.webp");
       }
+
     }
   }
 
