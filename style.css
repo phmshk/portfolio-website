@@ -165,7 +165,9 @@
   button,
   i,
   li {
-    transition: background-color 0.8s ease, color 0.8s ease;
+    transition:
+      background-color 0.8s ease,
+      color 0.8s ease;
   }
 
   h1,
@@ -371,7 +373,9 @@
         width: 24px;
         height: 2px;
         background-color: var(--clr-border);
-        transition: top 0.1s 0.2s ease, bottom 0.1s 0.2s ease,
+        transition:
+          top 0.1s 0.2s ease,
+          bottom 0.1s 0.2s ease,
           transform 0.1s ease;
       }
 
@@ -388,13 +392,17 @@
       &.clicked::before {
         top: 10px;
         transform: rotate(45deg);
-        transition: top 0.3s ease, transform 0.3s 0.3s ease;
+        transition:
+          top 0.3s ease,
+          transform 0.3s 0.3s ease;
       }
 
       &.clicked::after {
         bottom: 10px;
         transform: rotate(-45deg);
-        transition: bottom 0.3s ease, transform 0.3s 0.3s ease;
+        transition:
+          bottom 0.3s ease,
+          transform 0.3s 0.3s ease;
       }
 
       &.clicked span {
@@ -738,16 +746,15 @@
       }
 
       &.projects__item--1::before {
-        background-image: url("assets/main_screen_panel_studio.webp");
+        background-image: url("assets/main_screen_wimage.webp");
       }
       &.projects__item--2::before {
-        background-image: url("assets/main_screen_fittrack.webp");
+        background-image: url("assets/main_screen_panel_studio.webp");
       }
 
       &.projects__item--3::before {
-        background-image: url("assets/main_screen_portfolio.webp");
+        background-image: url("assets/main_screen_fittrack.webp");
       }
-
     }
   }
 
